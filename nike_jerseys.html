@@ -1,0 +1,353 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sports Gear Shop - Nike</title>
+    <style>
+        body {
+            background: linear-gradient(45deg, #1e3c72, #2a5298);
+            background-size: 400% 400%;
+            animation: gradientBackground 15s ease infinite;
+            color: #fff;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        @keyframes gradientBackground {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        header {
+            background: rgba(0, 0, 0, 0.7);
+            padding: 20px;
+            text-align: center;
+            color: #fff;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        nav ul li {
+            display: inline;
+            margin: 0 10px;
+        }
+
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+        }
+
+        nav ul li a:hover {
+            text-decoration: underline;
+        }
+
+        .nike-hero {
+            background-image: url('images/Nike logo.jpg'); /* Path to your high-resolution image */
+            background-attachment: fixed;
+            background-size: cover;
+            background-position: center;
+            height: 400px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-align: center;
+            position: relative;
+            animation: fadeIn 2s ease-in-out;
+        }
+
+        .nike-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.3));
+            z-index: 0;
+        }
+
+        .nike-hero h1 {
+            font-size: 3rem;
+            margin: 0;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Enhanced text shadow for better readability */
+            position: relative;
+            z-index: 1;
+            animation: moveUp 3s ease-in-out infinite;
+        }
+
+        .product-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            padding: 20px;
+            background-color: rgba(0, 0, 0, 0.8);
+        }
+
+        .product {
+            background: rgba(255, 255, 255, 0.1);
+            margin: 10px;
+            padding: 20px;
+            border: 1px solid #444;
+            border-radius: 10px;
+            width: calc(25% - 40px); /* Adjusted width to fit more products */
+            box-sizing: border-box;
+            box-shadow: 0 0 10px rgba(0,0,0,0.5);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .product:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.7);
+        }
+
+        .product img {
+            max-width: 100%;
+            border-radius: 10px;
+            transition: transform 0.3s ease;
+        }
+
+        .product img:hover {
+            transform: scale(1.05);
+        }
+
+        .product h2 {
+            margin: 10px 0 5px;
+            color: #fff;
+        }
+
+        .product p {
+            margin: 5px 0;
+            color: #ccc;
+        }
+
+        .product .details {
+            margin: 10px 0;
+            color: #bbb;
+        }
+
+        .star-rating {
+            display: flex;
+            justify-content: center;
+            margin-top: 10px;
+        }
+
+        .star-rating span {
+            font-size: 1.5rem;
+            color: gold;
+            margin: 0 2px;
+        }
+
+        .feature-section {
+            padding: 40px 20px;
+            background-color: rgba(0, 0, 0, 0.8);
+            text-align: center;
+        }
+
+        .feature-section h2 {
+            margin-bottom: 20px;
+            color: #fff;
+        }
+
+        .feature-section .features {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .feature-section .feature {
+            margin: 10px;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            width: calc(33% - 40px);
+            box-sizing: border-box;
+            box-shadow: 0 0 10px rgba(0,0,0,0.5);
+        }
+
+        .feature-section .feature img {
+            width: 50px;
+            margin-bottom: 10px;
+        }
+
+        .testimonials {
+            background: rgba(0, 0, 0, 0.7);
+            color: #fff;
+            padding: 40px 20px;
+            text-align: center;
+        }
+
+        .testimonials h2 {
+            margin-bottom: 20px;
+        }
+
+        .testimonial {
+            margin: 10px 0;
+        }
+
+        .testimonial p {
+            margin: 5px 0;
+            font-style: italic;
+        }
+
+        .testimonial span {
+            display: block;
+            margin-top: 10px;
+            color: #ccc;
+        }
+
+        .social-media {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        .social-media a {
+            margin: 0 10px;
+            text-decoration: none;
+        }
+
+        .social-media img {
+            width: 40px; /* Size of the icons */
+            transition: transform 0.3s;
+        }
+
+        .social-media img:hover {
+            transform: scale(1.1); /* Slight zoom effect on hover */
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes moveUp {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>JERSEY HUB</H1></h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="shop.html">Shop</a></li>
+                <li><a href="brands.html">Brands</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="nike-hero">
+        <h1>Discover the Best of Nike</h1>
+    </div>
+    <div class="product-grid">
+        <div class="product">
+            <img src="images/France away.jpg" alt="Nike Jersey">
+            <h2>France National Away Jersey</h2>
+            <p>High-quality jersey from Nike.</p>
+            <div class="details">
+                <p>Material: 100% Polyester</p>
+                <p>Features: Breathable fabric, Slim fit</p>
+                <p>Available Sizes: S, M, L, XL</p>
+            </div>
+            <button class="buy-button">Buy Now</button>
+            <div class="star-rating">
+                <span>&#9733;</span>
+                <span>&#9733;</span>
+                <span>&#9733;</span>
+                <span>&#9733;</span>
+                <span>&#9734;</span> <!-- Example rating: 4 stars -->
+            </div>
+        </div>
+        <div class="product">
+            <img src="images/portugal home.jpeg" alt="Nike Jersey">
+            <h2>Portugal National Jersey</h2>
+            <p>100% Cotton. Authentic Fabric.</p>
+            <div class="details">
+                <p>Material: 100% Cotton</p>
+                <p>Features: Soft touch, Regular fit</p>
+                <p>Available Sizes: S, M, L, XL</p>
+            </div>
+            <button class="buy-button">Buy Now</button>
+            <div class="star-rating">
+                <span>&#9733;</span>
+                <span>&#9733;</span>
+                <span>&#9733;</span>
+                <span>&#9733;</span>
+                <span>&#9733;</span> <!-- Example rating: 5 stars -->
+            </div>
+        </div>
+        <div class="product">
+            <img src="images/inter milan home.jpg" alt="Nike Jersey">
+            <h2>Inter milan</h2>
+            <p>Limeted Edition.%100 cotton </p>
+             <div class="details">
+                <p>Material:100% cotton</p>
+                <p>Features:soft touch,Regular fit</p>
+                <p>Available Sizes:S,M,L,Xl</p>
+            
+             </div>
+             <button class="buy-button">Buy Now</button><div class="star-rating">
+                <span>&#9733;</span>
+                <span>&#9733;</span>
+                <span>&#9733;</span>
+                <span>&#9733;</span>
+                <span>&#9734;</span>
+            </div>
+        </div>
+        <div class="product">
+            <img src="images/Ghana.jpeg" alt="Nike Jersey">
+            <h2>Ghana National Jersey</h2>
+            <p>Authentic Fabric.%100 cotton </p>
+             <div class="details">
+                <p>Material:100% cotton</p>
+                <p>Features:soft touch,Regular fit</p>
+                <p>Available Sizes:S,M,L,Xl</p>
+            </div>
+            <button class="buy-button">Buy Now</button>
+            <div class="star-rating">
+                <span>&#9733;</span>
+                <span>&#9733;</span>
+                <span>&#9733;</span>
+                <span>&#9734;</span>
+                <span>&#9734;</span>
+            </div>
+        </div>
+        <div class="product">
+            <img src="images/england.jpeg" alt="Nike Jersey">
+            <h2>England National Jersey</h2>
+            <p>Limeted Edition.%100 cotton </p>
+             <div class="details">
+                <p>Material:100% cotton</p>
+                <p>Features:soft touch,Regular fit</p>
+                <p>Available Sizes:S,M,L,Xl</p>
+            </div>
+            <button class="buy-button">Buy Now</button>
+            <div class="star-rating">
+                <span>&#9733;</span>
+                <span>&#9733;</span>
+                <span>&#9733;</span>
+                <span>&#9733;</span>
+                <span>&#9733;</span>
+            </div>
+        </div>
+
+

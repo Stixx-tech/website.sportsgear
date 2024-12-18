@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Accessories</title>
+    <style>
+        body {
+            background-color: #f4f4f4;
+            background-image: url('images/accessories.jpg'); /* Background image */
+            background-size: cover;
+            background-attachment: fixed;
+            color: #333;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background: rgba(0, 0, 0, 0.8);
+            padding: 20px;
+            text-align: center;
+            color: #fff;
+            animation: fadeIn 2s ease-in-out;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        nav ul li {
+            display: inline;
+            margin: 0 10px;
+        }
+
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+        }
+
+        nav ul li a:hover {
+            text-decoration: underline;
+        }
+
+        .product-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .product {
+            background: #fff;
+            margin: 10px;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            width: calc(33% - 40px);
+            box-sizing: border-box;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            animation: fadeInProduct 1s ease-in-out;
+            text-align: center;
+        }
+
+        .product:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+        }
+
+        .product img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 5px;
+            transition: transform 0.3s ease;
+        }
+
+        .product img:hover {
+            transform: scale(1.05);
+        }
+
+        .product h2 {
+            margin: 10px 0 5px;
+            color: #333;
+        }
+
+        .product p {
+            margin: 5px 0;
+            color: #666;
+        }
+
+        .price {
+            font-size: 1.2em;
+            margin: 10px 0;
+            color: #007BFF;
+        }
+
+        .buy-button {
+            padding: 10px 20px;
+            border-radius: 5px;
+            border: none;
+            background-color: #28a745;
+            color: white;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        .buy-button:hover {
+            background-color: #218838;
+            transform: scale(1.05);
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes fadeInProduct {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Responsive styling for smaller screens */
+        @media (max-width: 768px) {
+            .product {
+                width: calc(50% - 40px);
+            }
+        }
+
+        @media (max-width: 480px) {
+            .product {
+                width: calc(100% - 40px);
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Accessories</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="shop.html">Shop</a></li>
+                <li><a href="brands.html">Brands</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="product-grid">
+        <!-- Accessories -->
+        <div class="product">
+            <img src="images/tracker.jpg" alt="Fitness Tracker">
+            <h2>Fitness Tracker</h2>
+            <p>Track your fitness and health with precision.</p>
+            <div class="price">$50.00</div>
+            <button class="buy-button" onclick="buyProduct('Fitness Tracker', 50)">Buy</button>
+        </div>
+        <div class="product">
+            <img src="images/watch.avif" alt="Sports Watch">
+            <h2>Sports Watch</h2>
+            <p>Stay on time and in style with this sports watch.</p>
+            <div class="price">$75.00</div>
+            <button class="buy-button" onclick="buyProduct('Sports Watch', 75)">Buy</button>
+        </div>
+        <div class="product">
+            <img src="images/water bottle.jpg" alt="Water Bottle">
+            <h2>Water Bottle</h2>
+            <p>Keep hydrated with this durable water bottle.</p>
+            <div class="price">$20.00</div>
+            <button class="buy-button" onclick="buyProduct('Water Bottle', 20)">Buy</button>
+        </div>
+        <div class="product">
+            <img src="images/sports back.webp" alt="Gym Bag">
+            <h2>Gym Bag</h2>
+            <p>Carry all your gear with this spacious gym bag.</p>
+            <div class="price">$40.00</div>
+            <button class="buy-button" onclick="buyProduct('Gym Bag', 40)">Buy</button>
+        </div>
+        <div class="product">
+            <img src="images/Tape.jpg" alt="Yoga Mat">
+            <h2>Athletic Tape </h2>
+            <p>Professional Sports Tape for Ankle Wrist Knee Shoulder Muscles Joints. Latex Free, Waterproof, Stretchy, and Gentle on Skin. Up to 115 ft/Roll.</p>
+            <div class="price">$30.00</div>
+            <button class="buy-button" onclick="buyProduct('Yoga Mat', 30)">Buy</button>
+        </div>
+        <div class="product">
+            <img src="images/headphones.jpg" alt="Headphones">
+            <h2>JBL Under Armour Sport Wireless Headphones</h2>
+            <p>Enjoy your music with these high-quality headphones.</p>
+            <div class="price">$60.00</div>
+            <button class="buy-button" onclick="buyProduct('Headphones', 60)">Buy</button>
+        </div>
+        <div class="product">
+            <img src="images/anti slip.jpeg" alt="Fitness Tracker">
+            <h2>Ankle Support Anti Slip</h2>
+            <p>Track your fitness and health with precision.</p>
+            <div class="price">$50.00</div>
+            <button class="buy-button" onclick="buyProduct('Fitness Tracker', 50)">Buy</button>
+        </div>
+        <div class="product">
+            <img src="images/Non-Skid-Hospital-Socks-for-Men-and-Women-by-RATIVE.jpg" alt="Fitness Tracker">
+            <h2>No Slip Socks </h2>
+            <p>Track your fitness and health with precision.</p>
+            <div class="price">$50.00</div>
+            <button class="buy-button" onclick="buyProduct('Fitness Tracker', 50)">Buy</button>
+        </div>
+        <div class="product">
+            <img src="images/nike-dri-fit-park-first-layer-undershirt_1~2.jpg" alt="Fitness Tracker">
+            <h2>Nike Dri-Fit Park</h2>
+            <p>New Dri-Fit technology.</p>
+            <div class="price">$50.00</div>
+            <button class="buy-button" onclick="buyProduct('Fitness Tracker', 50)">Buy</button>
+        </div>
+        <div class="product">
+            <img src="images/41707801_xxl.avif" alt="Fitness Tracker">
+            <h2>Nike Academy Football Socksr</h2>
+            <p>%100 cotton.</p>
+            <div class="price">$50.00</div>
+            <button class="buy-button" onclick="buyProduct('Fitness Tracker', 50)">Buy</button>
+        </div>
+    </div>
+    <script>
+        const cart = [];
+
+        function buyProduct(productName, productPrice) {
+            cart.push({ name: productName, price: productPrice });
+            alert(`${productName} has been added to your cart.`);
+            console.log(cart); // Display cart contents in console for testing
+        }
+    </script>
+</body>
+</html>

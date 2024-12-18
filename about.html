@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Sports Gear Shop</title>
+    <style>
+        body {
+            background-color: #f4f4f4;
+            background-image: url('images/about-background.jpg'); /* Background image */
+            background-size: cover;
+            background-attachment: fixed;
+            color: #333;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            overflow-y: scroll;
+        }
+
+        header {
+            background: rgba(0, 0, 0, 0.8);
+            padding: 20px;
+            text-align: center;
+            color: #fff;
+            animation: fadeIn 2s ease-in-out;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        nav ul li {
+            display: inline;
+            margin: 0 10px;
+        }
+
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+        }
+
+        nav ul li a:hover {
+            text-decoration: underline;
+        }
+
+        .about-section {
+            padding: 40px;
+            text-align: center;
+            background-color: rgba(255, 255, 255, 0.8);
+            animation: fadeInContent 2s ease-in-out;
+        }
+
+        .about-section h1 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            animation: slideInDown 1s ease-in-out;
+        }
+
+        .about-section p {
+            font-size: 1.2rem;
+            line-height: 1.6;
+            margin: 20px 0;
+            animation: fadeInText 2s ease-in-out;
+        }
+
+        .contact-info {
+            font-size: 1.1rem;
+            margin: 20px 0;
+            animation: fadeInText 2s ease-in-out;
+        }
+
+        .social-media {
+            margin: 20px 0;
+            animation: fadeIn 2s ease-in-out;
+        }
+
+        .social-media a {
+            margin: 0 10px;
+            color: #333;
+            text-decoration: none;
+            font-size: 2rem;
+            transition: color 0.3s ease, transform 0.3s ease;
+        }
+
+        .social-media a:hover {
+            color: #007BFF;
+            transform: scale(1.1);
+        }
+
+        footer {
+            background: #333;
+            color: #fff;
+            text-align: center;
+            padding: 20px;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+            animation: fadeIn 2s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes fadeInContent {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes slideInDown {
+            from { transform: translateY(-100%); }
+            to { transform: translateY(0); }
+        }
+
+        @keyframes fadeInText {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>About Us</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="shop.html">Shop</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="about-section">
+        <h1>Welcome to Sports Gear Shop</h1>
+        <p>At Sports Gear Shop, we are passionate about providing the best quality sports gear to help you achieve your fitness goals. Whether you're a professional athlete or a weekend warrior, we have everything you need to perform at your best. Our mission is to offer top-of-the-line products at competitive prices, with exceptional customer service. Join us in our journey to make sports and fitness accessible to everyone.</p>
+        <div class="contact-info">
+            <p><strong>Location:</strong> 123 Sports Street, Accra, Ghana</p>
+            <p><strong>Email:</strong> info@sportsgearshop.com</p>
+        </div>
+        <div class="social-media">
+            <a href="https://www.facebook.com/Shawn Stixx" target="_blank">
+                <img src="images/face.jpg" alt="Facebook">
+            </a>
+    
+            
+            <a href="https://www.instagram.com/ayam_shawn_stix" target="_blank">
+                <img src="images/instar.jpg" alt="Instagram">
+            </a>
+            <a href="https://wa.me/+233261979662" target="_blank">
+                <img src="images/whatsapp.jpg" alt="WhatsApp">
+            </a>
+        </div>
+    </div>
+    <footer>
+        &copy; 2024 Sports Gear Shop. All rights reserved.
+    </footer>
+
+</body>
+</html>
+

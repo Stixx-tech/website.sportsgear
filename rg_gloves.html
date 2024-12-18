@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RG Gloves</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: url('images/new-background.jpg') no-repeat center center fixed;
+            background-size: cover;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+        }
+
+        header {
+            background: rgba(0, 0, 0, 0.8);
+            padding: 20px;
+            text-align: center;
+            color: #fff;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            text-align: center;
+        }
+
+        nav ul li {
+            display: inline;
+            margin: 0 10px;
+        }
+
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 1.2rem;
+        }
+
+        nav ul li a:hover {
+            text-decoration: underline;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .slider {
+            position: relative;
+            width: 80%;
+            max-width: 800px;
+            text-align: center;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+            border-radius: 10px;
+            overflow: hidden;
+            background-color: rgba(255, 255, 255, 0.9);
+            margin-bottom: 20px;
+        }
+
+        .slider img {
+            width: 100%;
+            display: none;
+            transition: opacity 0.5s ease;
+        }
+
+        .slider img.active {
+            display: block;
+        }
+
+        .product-info {
+            margin: 10px 0;
+            font-size: 1.5rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .product-info .name {
+            font-weight: bold;
+        }
+
+        .product-info .price {
+            margin: 5px 0;
+        }
+
+        .product-info .buy-button {
+            background-color: #28a745;
+            border: none;
+            color: #fff;
+            padding: 10px 20px;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        .product-info .buy-button:hover {
+            background-color: #218838;
+        }
+
+        .nav-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            padding: 10px;
+            background-color: #333;
+            border-radius: 10px;
+        }
+
+        .nav-buttons button {
+            background-color: #007bff;
+            border: none;
+            color: #fff;
+            padding: 10px 20px;
+            cursor: pointer;
+            border-radius: 5px;
+            margin: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        .nav-buttons button:hover {
+            background-color: #0056b3;
+        }
+
+        .cart {
+            width: 80%;
+            max-width: 800px;
+            text-align: center;
+            padding: 20px;
+            background-color: rgba(255, 255, 255, 0.9);
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .cart h2 {
+            margin-bottom: 20px;
+        }
+
+        .cart ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            text-align: left;
+        }
+
+        .cart ul li {
+            margin: 10px 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .cart ul li button {
+            background-color: #dc3545;
+            border: none;
+            color: #fff;
+            padding: 5px 10px;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        .cart ul li button:hover {
+            background-color: #c82333;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>RG Gloves</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="shop.html">Shop</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="container">
+        <div class="slider">
+            <img src="images/sanga aqua 2022.jpg" alt="RG Snaga Aqua" class="active">
+            <img src="images/tuanis.jpg" alt="RG Attrakt Freegel">
+            <img src="images/toride.jpg" alt="RG Supersonic">
+            <img src="images/aion.jpg" alt="RG Fury">
+            <img src="images/Aspro-Blackout-01-1.jpg" alt="RG Spyder">
+            <img src="images/Tuanis-Replica-01.jpg" alt="RG Guardian">
+            <div class="product-info">
+                <div class="name">RG Snaga Aqua</div>
+                <div class="price">$75.00</div>
+                <button class="buy-button" onclick="buyProduct('RG Snaga Aqua', 75)">Buy</button>
+            </div>
+            <div class="nav-buttons">
+                <button onclick="showImage(0)">RG Snaga Aqua</button>
+                <button onclick="showImage(1)">Tuanis CHR Limited Edition</button>
+                <button onclick="showImage(2)">Toride</button>
+                <button onclick="showImage(3)">RG Aion</button>
+                <button onclick="showImage(4)">RG Aspro Blackout</button>
+                <button onclick="showImage(5)">RG Bacan replica</button>
+            </div>
+        </div>
+        <div class="cart" id="cart">
+            <h2>Shopping Cart</h2>
+            <ul id="cartItems"></ul>
+            <div id="totalPrice"></div>
+        </div>
+    </div>
+    <script>
+        const images = document.querySelectorAll('.slider img');
+        const nameElement = document.querySelector('.slider .product-info .name');
+        const priceElement = document.querySelector('.slider .product-info .price');
+        const buyButton = document.querySelector('.slider .product-info .buy-button');
+        const imageNames = ['RG Snaga Aqua', 'RG Attrakt Freegel', 'RG Supersonic', 'RG Fury', 'RG Spyder', 'RG Guardian'];
+        const imagePrices = ['$75.00', '$85.00', '$65.00', '$90.00', '$70.00', '$80.00'];
+        const imageBuyFunctions = [
+            () => buyProduct('RG Snaga Aqua', 75),
+            () => buyProduct('Tuanis CHR Limited Edition', 85),
+            () => buyProduct('Toride', 65),
+            () => buyProduct('RG Aion', 90),
+            () => buyProduct('RG Aspro Blackout', 70),
+            () => buyProduct('RG Bacan replica', 80)
+        ];
+
+        let cart = [];
+
+function showImage(index) {
+    images.forEach((img, i) => {
+        img.classList.remove('active');
+        if (i === index) {
+            img.classList.add('active');
+        }
+    });
+    nameElement.textContent = imageNames[index];
+    priceElement.textContent = imagePrices[index];
+    buyButton.onclick = imageBuyFunctions[index];
+}
+
+function buyProduct(name, price) {
+    // Check if the product is already in the cart
+    const existingProduct = cart.find(item => item.name === name);
+    if (existingProduct) {
+        // If it is, increase the quantity
+        existingProduct.quantity += 1;
+    } else {
+        // If not, add it to the cart with quantity 1
+        cart.push({ name, price, quantity: 1 });
+    }
+    updateCart();
+}
+
+function updateCart() {
+    const cartItems = document.getElementById('cartItems');
+    const totalPrice = document.getElementById('totalPrice');
+    
+    // Clear the current cart items
+    cartItems.innerHTML = '';
+    
+    // Calculate the total price
+    let total = 0;
+    cart.forEach((item, index) => {
+        total += item.price * item.quantity;
+        const li = document.createElement('li');
+        li.textContent = `${item.name} - $${item.price.toFixed(2)} x ${item.quantity}`;
+        cartItems.appendChild(li);
+    });
+    
+    // Update the total price
+    totalPrice.textContent = `Total: $${total.toFixed(2)}`;
+}
+</script>
+</body>
+</html>

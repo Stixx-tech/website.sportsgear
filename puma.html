@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Puma Boots</title>
+    <style>
+        body {
+            background: url('images/back.jpg') no-repeat center center fixed;
+            background-size: cover;
+            color: #333;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background: rgba(0, 0, 0, 0.7);
+            padding: 20px;
+            text-align: center;
+            color: #fff;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        nav ul li {
+            display: inline;
+            margin: 0 10px;
+        }
+
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+        }
+
+        nav ul li a:hover {
+            text-decoration: underline;
+        }
+
+        .product-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            padding: 20px;
+            background-color: rgba(255, 255, 255, 0.8);
+        }
+
+        .product-grid .product {
+            background: #fff;
+            margin: 10px;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            width: calc(33% - 40px);
+            box-sizing: border-box;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .product-grid .product:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+        }
+
+        .product img {
+            max-width: 100%;
+            border-radius: 5px;
+            transition: transform 0.3s ease;
+        }
+
+        .product img:hover {
+            animation: zoomOut 0.5s ease-in-out forwards;
+        }
+
+        .product h2 {
+            margin: 10px 0 5px;
+            color: #333;
+        }
+
+        .product p {
+            margin: 5px 0;
+            color: #666;
+        }
+
+        .product .price {
+            font-size: 1.2em;
+            margin: 10px 0;
+            color: #007BFF;
+        }
+
+        .product .size-button {
+            background-color: #007BFF;
+            border: none;
+            color: white;
+            padding: 10px 20px;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        .product .size-button:hover {
+            background-color: #0056b3;
+        }
+
+        .teams-nav {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .teams-nav a {
+            color: #333;
+            margin: 0 10px;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .teams-nav a:hover {
+            color: #007BFF;
+        }
+
+        .animated-text {
+            text-align: center;
+            margin: 20px 0;
+            font-size: 2em;
+            animation: fadeIn 2s ease-in-out;
+        }
+
+        @keyframes zoomOut {
+            from {
+                transform: scale(1);
+            }
+            to {
+                transform: scale(1.05);
+            }
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes bounceIn {
+            0%, 20%, 50%, 80%, 100% {
+                transform: translateY(0);
+            }
+            40% {
+                transform: translateY(-30px);
+            }
+            60% {
+                transform: translateY(-15px);
+            }
+        }
+
+        .cart {
+            margin: 20px auto;
+            text-align: center;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+
+        .cart h2 {
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Puma Boots</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="shop.html">Shop</a></li>
+                <li><a href="brands.html">Brands</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="animated-text">Available Boots</div>
+    <div class="product-grid">
+        <!-- Boot Type 1 -->
+        <div class="product">
+            <img src="images/future blue.jpg" alt="Puma Boot 1">
+            <h2 class="animated-text">Puma Future</h2>
+            <p>High-performance football boots for speed and control.</p>
+            <p>Blue</p>
+            <div class="price">$120.00</div>
+            <button class="size-button" onclick="buyProduct('Puma Future', 120)">Buy</button>
+        </div>
+
+        <!-- Boot Type 2 -->
+        <div class="product">
+            <img src="images/puma one.jpg" alt="Puma Boot 2">
+            <h2 class="animated-text">Puma One</h2>
+            <p>Designed for agility and precision.</p>
+            <p>Red and White</p>
+            <div class="price">$130.00</div>
+            <button class="size-button" onclick="buyProduct('Puma One', 130)">Buy</button>
+        </div>
+
+        <!-- Boot Type 3 - Multiple Images for Puma Future -->
+        <h2 class="animated-text" style="animation: bounceIn 2s;">Puma Future</h2>
+        <!-- Image 1 -->
+        <div class="product">
+            <img src="images/future match+.jpg" alt="Puma Future 1">
+            <h2 class="animated-text">Puma Future</h2>
+            <p>Innovative design for ultimate flexibility.</p>
+            <p>Lemon Green</p>
+            <div class="price">$125.00</div>
+            <button class="size-button" onclick="buyProduct('Puma Future', 125)">Buy</button>
+        </div>
+        <!-- Image 2 -->
+        <div class="product">
+            <img src="images/future ultimate.jpg" alt="Puma Future 2">
+            <h2 class="animated-text">Puma Future 2</h2>
+            <p>Enhanced grip and agility.</p>
+            <div class="price">$140.00</div>
+            <button class="size-button" onclick="buyProduct('Puma Future 2', 140)">Buy</button>
+        </div>
+        <!-- Image 3 -->
+        <div class="product">
+            <img src="images/new.jpg" alt="images/new.jpg">
+            <h2 class="animated-text">Puma Future 3</h2>
+            <p>Stylish and effective for high performance.</p>
+            <div class="price">$135.00</div>
+            <button class="size-button" onclick="buyProduct('Puma Future 3', 135)">Buy</button>
+        </div>
+
+        <!-- Boot Type 4 -->
+        <div class="product">
+            <img src="images/puma future z.jpg" alt="Puma King">
+            <h2 class="animated-text">Puma King</h2>
+            <p>Classic boots with modern technology for superior control.</p>
+            <div class="price">$150.00</div>
+            <button class="size-button" onclick="buyProduct('Puma King', 150)">Buy</button>
+        </div>
+
+        <!-- Boot Type 5 -->
+        <div class="product">
+            <img src="images/puma ultra ultimate.jpg" alt="Puma One">
+            <h2 class="animated-text">Puma One</h2>
+            <p>Engineered for fit, fast, and feel.</p>
+            <div class="price">$145.00</div>
+            <button class="size-button" onclick="buyProduct('Puma One', 145)">Buy</button>
+        </div>
+    </div>
+    <div class="cart" id="cart">
+        <h2>Shopping Cart</h2>
+        <ul id="cartItems"></ul>
+        <div id="totalPrice"></div>
+    </div>
+    <script>
+        let cart = [];
+
+function buyProduct(name, price) {
+    cart.push({ name, price });
+    updateCart();
+}
+
+function updateCart() {
+    const cartItems = document.getElementById('cartItems');
+    const totalPrice = document.getElementById('totalPrice');
+    
+    // Clear the current cart items
+    cartItems.innerHTML = '';
+    
+    // Calculate the total price
+    let total = 0;
+    cart.forEach((item, index) => {
+        total += item.price;
+        const li = document.createElement('li');
+        li.textContent = `${item.name} - $${item.price.toFixed(2)}`;
+        
+        // Create a remove button
+        const removeButton = document.createElement('button');
+        removeButton.textContent = 'Remove';
+        removeButton.onclick = () => {
+            removeFromCart(index);
+        };
+        li.appendChild(removeButton);
+        
+        cartItems.appendChild(li);
+    });
+    
+    // Update the total price
+    totalPrice.textContent = `Total: $${total.toFixed(2)}`;
+}
+
+function removeFromCart(index) {
+    cart.splice(index, 1);
+    updateCart();
+}
+</script>

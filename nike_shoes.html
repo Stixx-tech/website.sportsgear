@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nike Shoes</title>
+    <style>
+        body {
+            background-color: #f4f4f4;
+            background-image: url('images/back nike.jpg'); /* Background image */
+            background-size: cover;
+            background-attachment: fixed;
+            color: #333;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background: rgba(0, 0, 0, 0.8);
+            padding: 20px;
+            text-align: center;
+            color: #fff;
+            animation: fadeIn 2s ease-in-out;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        nav ul li {
+            display: inline;
+            margin: 0 10px;
+        }
+
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+        }
+
+        nav ul li a:hover {
+            text-decoration: underline;
+        }
+
+        .search-bar {
+            margin: 20px auto;
+            text-align: center;
+        }
+
+        .search-bar input {
+            width: 50%;
+            padding: 10px;
+            border-radius: 5px;
+            border: none;
+        }
+
+        .search-bar button {
+            padding: 10px 20px;
+            border-radius: 5px;
+            border: none;
+            background-color: #007BFF;
+            color: white;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        .search-bar button:hover {
+            background-color: #0056b3;
+            transform: scale(1.05);
+        }
+
+        .product-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .product {
+            background: #fff;
+            margin: 10px;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            width: calc(33% - 40px);
+            box-sizing: border-box;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            animation: fadeInProduct 1s ease-in-out;
+            text-align: center;
+        }
+
+        .product:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+        }
+
+        .product img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 5px;
+            transition: transform 0.3s ease;
+        }
+
+        .product img:hover {
+            transform: scale(1.05);
+        }
+
+        .product h2 {
+            margin: 10px 0 5px;
+            color: #333;
+        }
+
+        .product p {
+            margin: 5px 0;
+            color: #666;
+        }
+
+        .price {
+            font-size: 1.2em;
+            margin: 10px 0;
+            color: #007BFF;
+        }
+
+        .buy-button {
+            padding: 10px 20px;
+            border-radius: 5px;
+            border: none;
+            background-color: #28a745;
+            color: white;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        .buy-button:hover {
+            background-color: #218838;
+            transform: scale(1.05);
+        }
+
+        .cart {
+            margin: 20px auto;
+            text-align: center;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+
+        .cart h2 {
+            margin-bottom: 20px;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes fadeInProduct {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes rotate {
+            from {
+                transform: rotate(0deg);
+            }
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        /* Responsive styling for smaller screens */
+        @media (max-width: 768px) {
+            .product {
+                width: calc(50% - 40px);
+            }
+
+            .search-bar input {
+                width: 70%;
+            }
+
+            .search-bar button {
+                width: 25%;
+                padding: 10px 0;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .product {
+                width: calc(100% - 40px);
+            }
+        }
+    </style>
+</head>
+</head>
+<body>
+    <header>
+        <h1>Nike Shoes</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="shop.html">Shop</a></li>
+                <li><a href="brands.html">Brands</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="search-bar">
+        <input type="text" placeholder="Search for shoes..." id="searchInput">
+        <button type="button" onclick="searchProducts()">Search</button>
+    </div>
+    <div class="product-grid">
+        <!-- Your existing product divs -->
+    </div>
+    <script>
+        function searchProducts() {
+            const searchInput = document.getElementById('searchInput').value;
+            alert('Searching for: ' + searchInput);
+            // Add your search logic here
+        }
+
+        function buyProduct(productName, price) {
+            alert('You have selected ' + productName + ' for $' + price);
+            // Add your purchase logic here
+        }
+    </script>
+</body>
+</html>
+    </div>
+    <div class="product-grid">
+        <!-- Nike Shoes -->
+        <div class="product">
+            <img src="images/airmax.jpg" alt="Nike Air Max">
+            <h2>Nike Air Max</h2>
+            <p>High-performance running shoes for comfort and speed.</p>
+            <div class="price">$120.00</div>
+            <button class="buy-button" onclick="buyProduct('Nike Air Max', 120)">Buy</button>
+            <div class="star-rating">
+                <span>&#9733;</span>
+                <span>&#9733;</span>
+                <span>&#9733;</span>
+                <span>&#9733;</span>
+                <span>&#9733;</span>
+            </div>
+        </div>
+        <div class="product">
+            <img src="images/zoom.jpg" alt="Nike Air Zoom">
+            <h2>Nike Air Zoom</h2>
+            <p>Lightweight shoes with excellent cushioning.</p>
+            <div class="price">$110.00</div>
+            <button class="buy-button" onclick="buyProduct('Nike Air Zoom', 110)">Buy</button>
+            
+
+        </div>
+        <div class="product">
+            <img src="images/pegasus.jpg" alt="Nike Pegasus">
+            <h2>Nike Pegasus</h2>
+            <p>Versatile shoes for both running and casual wear.</p>
+            <div class="price">$100.00</div>
+            <button class="buy-button" onclick="buyProduct('Nike Pegasus', 100)">Buy</button>
+            <div class="star-rating">
+                <span>&#9733;</span>
+                <span>&#9733;</span>
+                <span>&#9733;</span>
+                <span>&#9734;</span>
+                <span>&#9734;</span>
+            </div>
+        </div>
+        <div class="product">
+            <img src="images/mecurial.avif" alt="Nike Free Run">
+            <h2>Nike Mercurial</h2>
+            <p>Designed for natural movement and flexibility.</p>
+            <div class="price">$90.00</div>
+            <button class="buy-button" onclick="buyProduct('Nike Mercurial', 90)">Buy</button>
+            <div class="star-rating">
+                <span>&#9733;</span>
+                <span>&#9733;</span>
+                <span>&#9734;</span>
+                <span>&#9734;</span>
+                <span>&#9734;</span>
+            </div>
+        </div>
+        <div class="product">
+            <img src="images/superfly.jpg" alt="Nike React Infinity">
+            <h2>Nike Super Fly </h2>
+            <p>Engineered for maximum comfort and durability.</p>
+            <div class="price">$130.00</div>
+            <button class="buy-button" onclick="buyProduct('Nike Super Fly', 130)">Buy</button>
+            <div class="star-rating">
+                <span>&#9733;</span>
+                <span>&#9733;</span>
+                <span>&#9733;</span>
+                <span>&#9734;</span>
+                <span>&#9734;</span>
+            </div>
+        </div>
+        <div class="product">
+            <img src="images/Phantom gx fg Other side.jpg" alt="Nike Metcon">
+            <h2>Nike Phantom</h2>
+            <p>Perfect for high-intensity training and workouts.</p>
+            <div class="price">$140.00</div>
+            <button class="buy-button" onclick="buyProduct('Nike Phantom', 140)">Buy</button>
+            <div class="star-rating">
+                <span>&#9733;</span>
+                <span>&#9733;</span>
+                <span>&#9733;</span>
+                <span>&#9733;</span>
+                <span>&#9734;</span>
+            </div>
+        </div>
+        <div class="product">
+            <img src="images/air force.jpg" alt="Nike Air Force 1">
+            <h2>Nike Air Force 1</h2>
+            <P>Velvet Brown leathers Outfit Premium</P>
+            <div class ="price">$200.00</div>
+            <button class="buy-button" onclick="buyProduct('Nike Air Force 1', 140)">Buy</button>
+            <div class="star-rating">
+                <span>&#9733;</span>
+                <span>&#9733;</span>
+                <span>&#9733;</span>
+                <span>&#9733;</span>
+                <span>&#9733;</span>
+            </div>
+        </div>
